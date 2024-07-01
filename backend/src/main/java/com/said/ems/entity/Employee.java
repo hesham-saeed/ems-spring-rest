@@ -22,6 +22,14 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //automatically increment the primary key
 	private Long id;
 	
+	
+	
+	public Employee(String firstName, String lastName, String email) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
+
 	@Column(name = "first_name")
 	private String firstName;
 	
