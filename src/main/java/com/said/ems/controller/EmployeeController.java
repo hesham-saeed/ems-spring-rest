@@ -1,5 +1,7 @@
 package com.said.ems.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,5 +38,11 @@ public class EmployeeController {
 		return ResponseEntity.ok(employeeDto); //return 200
 	}
 	
+	// Read All
+	@GetMapping
+	public ResponseEntity<List<EmployeeDto>> getAllEmployees(){
+		List<EmployeeDto> employees = employeeService.getAllEmployees();
+		return ResponseEntity.ok(employees);
+	}
 
 }
